@@ -19,10 +19,10 @@ $(document).ready(function(){
 	];	
 
 	// Start of script.
-	$(".exhibit-item").click(function() {
-		window.location.href = $(this).attr("src");
-	});
 	$.each(PIECES, function(i, piece) {
 		addExhibitPiece("design", piece);
+	});
+	$(".exhibit-item").click(function() {
+		window.location.href = $(this).attr("src");
 	});
 });
