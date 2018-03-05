@@ -8,5 +8,6 @@ $(document).ready(function(){
 	];	
 
 	// Start of script.
+	addHover("back");
 	addExhibitPieces("animation", PIECES);
 });

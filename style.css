@@ -56,6 +56,7 @@
 }
 a {
   cursor: url("images/cursor.png"), auto;
+  text-decoration: none;
 }
 html {
   background-color: #f9f7f7;

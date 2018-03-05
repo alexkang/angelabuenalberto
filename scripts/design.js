@@ -19,5 +19,6 @@ $(document).ready(function(){
 	];	
 
 	// Start of script.
+	addHover("back");
 	addExhibitPieces("design", PIECES);
 });
