@@ -15,7 +15,9 @@
 }
 .exhibit-item {
   display: inline-block;
-  height: 400px;
+  height: 500px;
+  margin-left: 32px;
+  margin-right: 32px;
 }
 .header {
   display: block;

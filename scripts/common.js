@@ -8,3 +8,7 @@ function addHover(buttonName) {
 			$(this).attr("src", "images/" + buttonName + "_default.png");
 		});
 }
+
+function addExhibitPiece(exhibit, pieceFileName) {
+	$(".exhibit").append('<img class="exhibit-item" src="' + exhibit + '/' + pieceFileName + '" />');
+}
