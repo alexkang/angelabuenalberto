@@ -1,6 +1,8 @@
 .about {
+  border: 1px dotted #ffcecf;
   margin: 0 auto;
   max-width: 100%;
+  padding: 32px;
   width: 500px;
 }
 .about-picture {
@@ -10,10 +12,13 @@
 .exhibit {
   overflow-x: scroll;
   overflow-y: hidden;
+  padding-top: 32px;
+  padding-bottom: 32px;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
 .exhibit-item {
+  border: 1px dotted #ffcecf;
   display: inline-block;
   height: 500px;
   margin-left: 32px;
@@ -28,7 +33,7 @@
 }
 .header-small {
   height: 60px;
-  margin-bottom: 64px;
+  margin-bottom: 44px;
 }
 .nav {
   text-align: center;

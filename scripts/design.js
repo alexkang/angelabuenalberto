@@ -15,7 +15,7 @@ $(document).ready(function(){
 		"11.jpg",
 		"12.png",
 		"13.png",
-		"14.png",
+		"14.png"
 	];	
 
 	// Start of script.
