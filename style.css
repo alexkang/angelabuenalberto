@@ -1,12 +1,12 @@
 .about {
   border: 1px dotted #ffcecf;
   margin: 0 auto;
-  max-width: 100%;
-  padding: 32px;
+  max-width: 97%;
+  padding: 3%;
   width: 500px;
 }
 .about-picture {
-  max-width: 100%;
+  max-width: 97%;
   width: 500px;
 }
 .exhibit {
