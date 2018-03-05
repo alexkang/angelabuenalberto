@@ -1,4 +1,3 @@
-.content {}
 .exhibit {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -11,19 +10,32 @@
 }
 .header {
   display: block;
-  height: 200px;
+  margin-bottom: 16px;
   margin-left: auto;
   margin-right: auto;
+  width: 80%;
 }
-.nav-bar {
+.header-small {
+  width: 20%;
+}
+.nav {
   text-align: center;
 }
 .nav-button {
-  margin: 8px;
-  padding: 16px;
+  display: inline-block;
+  height: 160px;
+  margin: 16px;
+  width: 160px;
 }
 .nav-button-image {
-  height: 56px;
+  display: block;
+  height: 120px;
+  margin: 0 auto;
+}
+.nav-button-label {
+  display: block;
+  height: 32px;
+  margin: 0 auto;
 }
 a {
   cursor: url("images/cursor.png"), auto;
