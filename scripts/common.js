@@ -18,15 +18,15 @@ function addExhibitPieces(exhibit, pieces) {
 	$.each(pieces, function(i, piece) {
 		// Decide whether to display this as an image or embedded video.
 		if (piece.includes(VIMEO_IDENTIFIER)) {
-			$(exhibitElement).append('<div class="exhibit-item">' + piece + '</div>');
+			$(exhibitElement).append('<div class="exhibit-item vimeo">' + piece + '</div>');
 		} else {
 			$(exhibitElement).append(
-				'<img class="exhibit-item" src="' + exhibit + '/' + piece + '" />');
+				'<img class="exhibit-item image" src="' + exhibit + '/' + piece + '" />');
 		}
 	});
 
-	// Add on-click functionality to all pieces.
-	$(".exhibit-item").click(function() {
+	// Add on-click functionality to all image pieces.
+	$(".image").click(function() {
 		window.location.href = $(this).attr("src");
 	});
 }
