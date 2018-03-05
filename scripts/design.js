@@ -8,21 +8,16 @@ $(document).ready(function(){
 		"5.jpg",
 		"6.png",
 		"7.png",
-		"7.5.png",
 		"8.png",
 		"9.png",
 		"10.png",
-		"11.jpg",
-		"12.png",
+		"11.png",
+		"12.jpg",
 		"13.png",
-		"14.png"
+		"14.png",
+		"15.png"
 	];	
 
 	// Start of script.
-	$.each(PIECES, function(i, piece) {
-		addExhibitPiece("design", piece);
-	});
-	$(".exhibit-item").click(function() {
-		window.location.href = $(this).attr("src");
-	});
+	addExhibitPieces("design", PIECES);
 });
