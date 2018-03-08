@@ -63,12 +63,12 @@
   margin: 0 auto;
 }
 a {
-  color: #ffcc02;
+  color: #721313;
   cursor: url("images/cursor.png"), auto;
   text-decoration: none;
 }
 a:hover {
-  color: #edbe04;
+  color: #ffcc02;
 }
 html {
   background-color: #f9f7f7;
