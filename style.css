@@ -1,7 +1,7 @@
 .about {
   border: 1px dotted #ffcecf;
   margin: 0 auto;
-  min-width: 500px;
+  min-width: 300px;
   padding: 2%;
   width: 40%;
 }
@@ -20,7 +20,7 @@
   margin-bottom: 4%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 50%;
+  width: 70%;
 }
 .exhibit-item {
   border: 1px dotted #ffcecf;
