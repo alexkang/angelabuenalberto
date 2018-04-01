@@ -1,65 +1,61 @@
 .about {
   border: 1px dotted #ffcecf;
   margin: 0 auto;
-  max-width: 94%;
-  padding: 3%;
-  width: 500px;
+  min-width: 500px;
+  padding: 2%;
+  width: 40%;
 }
 .about-picture {
-  max-width: 97%;
-  width: 500px;
+  width: 100%;
 }
 .credits {
-  bottom: 16px;
+  bottom: 3%;
   position: fixed;
-  right: 16px;
+  right: 3%;
 }
 .footer-space {
-  height: 64px;
+  height: 5%;
 }
 .exhibit {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
+  margin-bottom: 4%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
 }
 .exhibit-item {
   border: 1px dotted #ffcecf;
-  display: inline-block;
-  height: 400px;
-  margin-left: 32px;
-  margin-right: 32px;
+  margin-bottom: 4%;
+  width: 100%;
 }
 .header {
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: 5%;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  max-height: 25%;
+  max-width: 80%;
 }
 .header-small {
-  height: 44px;
-  margin-bottom: 44px;
+  height: 8%;
+  margin-bottom: 2%;
 }
 .nav {
+  height: 25%;
   text-align: center;
 }
 .nav-button {
   display: inline-block;
-  height: 160px;
-  margin: 16px;
-  width: 160px;
+  height: 100%;
+  margin: 2%;
 }
 .nav-button-image {
   display: block;
-  height: 120px;
+  height: 80%;
   margin: 0 auto;
 }
 .nav-button-label {
   display: block;
-  height: 32px;
+  height: 20%;
   margin: 0 auto;
 }
 a {
@@ -70,10 +66,18 @@ a {
 a:hover {
   color: #ffcc02;
 }
+body {
+  height: 100%;
+  width: 100%;
+}
 html {
   background-color: #f9f7f7;
   color: #d86565;
   cursor: url("images/cursor.png"), auto;
   font-family: 'Source Code Pro', monospace;
-  font-size: 18px;
+  font-size: 1.2em;
+  height: 98%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 98%;
 }
