@@ -9,9 +9,10 @@
   width: 100%;
 }
 .credits {
-  bottom: 3%;
+  bottom: 2%;
+  font-size: 1em;
   position: fixed;
-  right: 3%;
+  right: 2%;
 }
 .footer-space {
   height: 5%;
@@ -36,17 +37,17 @@
   max-width: 80%;
 }
 .header-small {
-  height: 8%;
+  height: 7%;
   margin-bottom: 2%;
 }
 .nav {
-  height: 25%;
+  height: 24%;
   text-align: center;
 }
 .nav-button {
   display: inline-block;
   height: 100%;
-  margin: 2%;
+  margin: 4%;
 }
 .nav-button-image {
   display: block;
@@ -68,6 +69,8 @@ a:hover {
 }
 body {
   height: 100%;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
 }
 html {
@@ -76,8 +79,8 @@ html {
   cursor: url("images/cursor.png"), auto;
   font-family: 'Source Code Pro', monospace;
   font-size: 1.2em;
-  height: 98%;
+  height: 95%;
   margin-left: auto;
   margin-right: auto;
-  width: 98%;
+  width: 95%;
 }
