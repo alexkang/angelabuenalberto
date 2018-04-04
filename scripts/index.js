@@ -4,6 +4,6 @@ $(document).ready(function(){
 
 	// Start of script.
 	$.each(BUTTONS, function(i, button) {
-		addHover(button);
+		addHover("#" + button, "#" + button, button);
 	});
 });

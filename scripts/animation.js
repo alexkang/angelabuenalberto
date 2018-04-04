@@ -6,6 +6,6 @@ $(document).ready(function(){
 	];	
 
 	// Start of script.
-	addHover("back");
+	addHover(".header-small", "#back", "back");
 	addExhibitPieces("animation", PIECES);
 });
