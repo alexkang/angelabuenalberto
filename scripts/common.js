@@ -1,6 +1,9 @@
 // Universal Constants.
 const VIMEO_IDENTIFIER = "https://player.vimeo.com/video/";
 
+// Preloaded hover images.
+hoverImages = [];
+
 // Helper functions.
 function addHover(triggerElement, buttonElement, image) {
 	var defaultImageUrl = "images/" + image + "_default.png";
@@ -9,6 +12,7 @@ function addHover(triggerElement, buttonElement, image) {
 	// First, preload the hover image.
 	var hoverImage = new Image();
 	hoverImage.src = hoverImageUrl;
+	hoverImages.push(hoverImage);
 
 	// Then, define the hover behavior.
 	$(triggerElement).hover(
