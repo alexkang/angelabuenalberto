@@ -3,12 +3,20 @@ const VIMEO_IDENTIFIER = "https://player.vimeo.com/video/";
 
 // Helper functions.
 function addHover(triggerElement, buttonElement, image) {
+	var defaultImageUrl = "images/" + image + "_default.png";
+	var hoverImageUrl = "images/" + image + "_hover.png"
+
+	// First, preload the hover image.
+	var hoverImage = new Image();
+	hoverImage.src = hoverImageUrl;
+
+	// Then, define the hover behavior.
 	$(triggerElement).hover(
 		function() {
-			$(buttonElement).attr("src", "images/" + image + "_hover.png");
+			$(buttonElement).attr("src", hoverImageUrl);
 		},
 		function() {
-			$(buttonElement).attr("src", "images/" + image + "_default.png");
+			$(buttonElement).attr("src", defaultImageUrl);
 		});
 }
 
