@@ -45,6 +45,17 @@
   height: 24%;
   text-align: center;
 }
+.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-bar li {
+  display: inline;
+}
+.nav-bar li a {
+  text-decoration: none;
+}
 .nav-button {
   display: inline-block;
   height: 100%;
