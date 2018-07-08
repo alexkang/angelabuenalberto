@@ -9,6 +9,9 @@
 .about-picture {
   width: 100%;
 }
+.content {
+  flex: 1 0 auto;
+}
 .credits {
   float: right;
   font-size: 1em;
@@ -25,6 +28,9 @@
   border: 1px dotted #ffcecf;
   margin-bottom: 4%;
   width: 100%;
+}
+.footer {
+  flex-shrink: 0;
 }
 .header-image {
   display: block;
@@ -50,7 +56,7 @@
 .nav-bar li a {
   border: #721313 1px solid;
   display: block;
-  font-size: 3vmin;
+  font-size: 2vmin;
   padding: 12px;
   text-align: center;
   text-decoration: none;
@@ -64,6 +70,8 @@ a:hover {
   color: #ffcc02;
 }
 body {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
