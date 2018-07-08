@@ -6,12 +6,15 @@
 }
 .about-description {
   flex: 2 1 0;
-  padding: 2.4vmin;
+  padding-bottom: 1.6vmin;
+  padding-right: 1.6vmin;
+  padding-top: 1.6vmin;
 }
 .about-picture {
-  align-self: center;
+  align-self: flex-start;
   flex: 1 1 0;
-  width: 1%;
+  padding: 1.6vmin;
+  width: 0;
 }
 .content {
   flex: 1 0 auto;
