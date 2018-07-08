@@ -7,6 +7,6 @@ $(document).ready(function(){
 	];	
 
 	// Start of script.
-	initHeader();
+	init();
 	addExhibitPieces("animation", PIECES);
 });
