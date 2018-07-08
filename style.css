@@ -10,10 +10,9 @@
   width: 100%;
 }
 .credits {
-  bottom: 2%;
+  float: right;
   font-size: 1em;
-  position: fixed;
-  right: 2%;
+  margin-bottom: 20px;
 }
 .footer-space {
   height: 5%;
@@ -25,6 +24,7 @@
   width: 70%;
 }
 .exhibit-item {
+  background: #ffffff;
   border: 1px dotted #ffcecf;
   margin-bottom: 4%;
   width: 100%;

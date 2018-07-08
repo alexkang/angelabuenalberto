@@ -8,5 +8,5 @@ $(document).ready(function(){
 
 	// Start of script.
 	initHeader();
-	addExhibitPieces("animation", PIECES);
+	addExhibitPieces("animation");
 });
