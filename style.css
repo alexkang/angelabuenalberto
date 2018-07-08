@@ -24,6 +24,12 @@ html {
   height: 100%;
   width: 100%;
 }
+p {
+  margin:0;
+}
+p + p {
+  margin-top:3.2vmin;
+}
 
 /* Body structure. */
 .content {
