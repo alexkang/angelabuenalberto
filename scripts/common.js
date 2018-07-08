@@ -29,14 +29,15 @@ function addHover(triggerElement, buttonElement, image) {
 		});
 }
 
-function addExhibitPieces(pieces) {
+function addExhibitPieces(exhibit, pieces) {
 	// Add exhibit pieces to the exhibit as HTML elements.
+	var exhibitElement = "#" + exhibit;
 	$.each(pieces, function(i, piece) {
 		// Decide whether to display this as an image or embedded video.
 		if (piece.includes(VIMEO_IDENTIFIER)) {
-			$(".exhibit").append('<div class="exhibit-item vimeo">' + piece + '</div>');
+			$(exhibitElement).append('<div class="exhibit-item vimeo">' + piece + '</div>');
 		} else {
-			$(".exhibit").append(
+			$(exhibitElement).append(
 				'<img class="exhibit-item image" src="' + exhibit + '/' + piece + '" />');
 		}
 	});

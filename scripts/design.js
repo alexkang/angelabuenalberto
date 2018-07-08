@@ -20,5 +20,5 @@ $(document).ready(function(){
 
 	// Start of script.
 	initHeader();
-	addExhibitPieces(PIECES);
+	addExhibitPieces("design", PIECES);
 });
