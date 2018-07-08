@@ -46,13 +46,19 @@
 }
 .nav-bar {
   display: table;
+  margin-left: 20%;
+  margin-right: 20%;
   padding: 0;
-  width: 100%;
+  width: 60%;
 }
 .nav-bar li {
-  display: inline;
+  display: table-cell;
 }
 .nav-bar li a {
+  border: #721313 1px solid;
+  display: block;
+  padding: 12px;
+  text-align: center;
   text-decoration: none;
 }
 .nav-button {
