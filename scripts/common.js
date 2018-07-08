@@ -5,6 +5,11 @@ const VIMEO_IDENTIFIER = "https://player.vimeo.com/video/";
 hoverImages = [];
 
 // Helper functions.
+function initHeader() {
+	$("#header").load("header.html");
+}
+
+
 function addHover(triggerElement, buttonElement, image) {
 	var defaultImageUrl = "images/" + image + "_default.png";
 	var hoverImageUrl = "images/" + image + "_hover.png"
