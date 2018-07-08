@@ -1,69 +1,4 @@
-.about {
-  border: 1px dotted #ffcecf;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-.about-description {
-  flex: 2 1 0;
-  padding-bottom: 1.6vmin;
-  padding-right: 1.6vmin;
-  padding-top: 1.6vmin;
-}
-.about-picture {
-  align-self: flex-start;
-  flex: 1 1 0;
-  padding: 1.6vmin;
-  width: 0;
-}
-.content {
-  flex: 1 0 auto;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-}
-.credits {
-  float: right;
-  padding: 2.4vmin;
-}
-.exhibit {
-  width: 100%;
-}
-.exhibit-item {
-  background: #ffffff;
-  border: 1px dotted #ffcecf;
-  margin-bottom: 6vmin;
-  width: 100%;
-}
-.footer {
-  flex: 0 0 auto;
-  margin-top: 8vmin;
-  width: 100%;
-}
-.header-image {
-  margin-bottom: 3.2vmin;
-  margin-top: 3.2vmin;
-  width: 100%;
-}
-.nav-bar {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 4vmin;
-  padding: 0;
-  width: 100%;
-}
-.nav-bar a {
-  flex: 1 0 auto;
-  border: #721313 1px solid;
-  display: block;
-  font-size: 2vmin;
-  padding: 1.6vmin;
-  text-align: center;
-}
-.nav-bar a:hover {
-  color: #ffffff;
-  background: #721313;
-}
+/* Universal site styling. */
 a {
   color: #721313;
   cursor: url("images/cursor.png"), auto;
@@ -88,4 +23,83 @@ html {
   font-size: 2.4vmin;
   height: 100%;
   width: 100%;
+}
+
+/* Body structure. */
+.content {
+  flex: 1 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+.footer {
+  flex: 0 0 auto;
+  margin-top: 8vmin;
+  width: 100%;
+}
+
+/* Header. */
+.header-image {
+  margin-bottom: 3.2vmin;
+  margin-top: 3.2vmin;
+  width: 100%;
+}
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 4vmin;
+  padding: 0;
+  width: 100%;
+}
+.nav-bar a {
+  border: #721313 0.5px solid;
+  flex: 1 0 auto;
+  display: block;
+  font-size: 2vmin;
+  padding: 1.6vmin;
+  text-align: center;
+}
+.nav-bar a + a {
+  border-left: 0;
+}
+.nav-bar a:hover {
+  color: #ffffff;
+  background: #721313;
+}
+
+/* Credits. */
+.credits {
+  float: right;
+  padding: 2.4vmin;
+}
+
+/* Exhibit pages. */
+.exhibit {
+  width: 100%;
+}
+.exhibit-item {
+  background: #ffffff;
+  border: 1px dotted #ffcecf;
+  margin-bottom: 6vmin;
+  width: 100%;
+}
+
+/* About page. */
+.about {
+  border: 1px dotted #ffcecf;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.about-description {
+  flex: 2 1 0;
+  padding-bottom: 1.6vmin;
+  padding-right: 1.6vmin;
+  padding-top: 1.6vmin;
+}
+.about-picture {
+  align-self: flex-start;
+  flex: 1 1 0;
+  padding: 1.6vmin;
+  width: 0;
 }
