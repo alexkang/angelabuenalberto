@@ -25,6 +25,6 @@ function addExhibitPieces(exhibit, pieces) {
 
 	// Add on-click functionality to all image pieces.
 	$(".image").click(function() {
-		window.location.href = $(this).attr("src");
+		window.open($(this).attr("src"), "_blank");
 	});
 }
