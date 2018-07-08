@@ -31,11 +31,10 @@
 }
 .header-image {
   display: block;
-  margin-bottom: 5%;
   margin-left: auto;
   margin-right: auto;
-  max-height: 25%;
-  max-width: 80%;
+  max-height: 20%;
+  max-width: 50%;
 }
 .header-small {
   height: 7%;
@@ -46,9 +45,9 @@
   text-align: center;
 }
 .nav-bar {
-  list-style-type: none;
-  margin: 0;
+  display: table;
   padding: 0;
+  width: 100%;
 }
 .nav-bar li {
   display: inline;
