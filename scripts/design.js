@@ -10,12 +10,14 @@ $(document).ready(function(){
 		"7.png",
 		"8.png",
 		"9.png",
-		"10.png",
+		"10.jpg",
 		"11.png",
-		"12.jpg",
-		"13.png",
+		"12.png",
+		"13.jpg",
 		"14.png",
-		"15.png"
+		"15.png",
+		"16.png",
+		"17.png"
 	];	
 
 	// Start of script.

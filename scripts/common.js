@@ -1,4 +1,4 @@
-// Universal Constants.
+// Universal constants.
 const VIMEO_IDENTIFIER = "https://player.vimeo.com/video/";
 
 // Helper functions.
