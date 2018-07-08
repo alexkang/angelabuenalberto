@@ -4,10 +4,10 @@ const VIMEO_IDENTIFIER = "https://player.vimeo.com/video/";
 // Helper functions.
 function init() {
 	// Load the header.
-	$("#header").load("header.html");
+	$(".header").load("header.html");
 
 	// Load the credits.
-	$("#credits").load("credits.html");
+	$(".credits").load("credits.html");
 }
 
 function addExhibitPieces(exhibit, pieces) {

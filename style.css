@@ -14,9 +14,6 @@
   font-size: 1em;
   margin-bottom: 20px;
 }
-.footer-space {
-  height: 5%;
-}
 .exhibit {
   margin-bottom: 4%;
   margin-left: auto;
@@ -35,10 +32,6 @@
   margin-right: auto;
   max-height: 20%;
   max-width: 50%;
-}
-.header-small {
-  height: 7%;
-  margin-bottom: 2%;
 }
 .nav {
   height: 24%;
@@ -60,21 +53,6 @@
   padding: 12px;
   text-align: center;
   text-decoration: none;
-}
-.nav-button {
-  display: inline-block;
-  height: 100%;
-  margin: 4%;
-}
-.nav-button-image {
-  display: block;
-  height: 80%;
-  margin: 0 auto;
-}
-.nav-button-label {
-  display: block;
-  height: 20%;
-  margin: 0 auto;
 }
 a {
   color: #721313;
