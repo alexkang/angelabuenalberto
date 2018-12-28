@@ -123,6 +123,10 @@
 
   // ---- Start of script ----
 
+  // Pre-fetch pages stored in other HTML files so that it's in the cache.
+  $.get("about.html");
+  $.get("projects.html");
+
   // Listen for browser navgation changes.
   window.addEventListener('popstate', event => {
     refreshState();
