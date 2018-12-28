@@ -10,7 +10,10 @@
   // ---- Functions ----
 
   function refreshContent() {
-    // Clear the content div to stop any pending network requests.
+    // Stop loading any pending images.
+    $("#content").find("img").attr("src", "");
+
+    // Clear the content div.
     $("#content").empty();
 
     // Determine what to put inside the div.
