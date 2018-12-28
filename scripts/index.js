@@ -1,4 +1,4 @@
-$(document).ready(() => {
+(() => {
   // ---- Constants ----
 
   var EXHIBIT_ITEM_PADDING_PERCENTAGE = 1.2;
@@ -159,4 +159,4 @@ $(document).ready(() => {
   $("#nav-footer").click(() => {
     quack.play();
   });
-});
+})();
