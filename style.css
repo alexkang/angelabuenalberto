@@ -16,7 +16,8 @@ body {
   width: 100%;
 }
 hr {
-  border: 0.5px dashed;
+  border: none;
+  border-top: 1px dashed #3e4248;
   width: 100%;
 }
 html {
@@ -84,7 +85,7 @@ html {
   opacity: 0.5;
 }
 .exhibit-item {
-  background: #ffffff;
+  background-color: #ffffff;
   flex: 0 1 auto;
   padding: 1.6%;
 }
