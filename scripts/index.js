@@ -153,4 +153,10 @@ $(document).ready(() => {
   $("#resume").click(() => {
     window.open("https://docs.google.com/document/d/1VhogclEd0APy2J8nsYhuJUyV3vaSyDmMQxuzpjSjuYo/edit?usp=sharing");
   });
+
+  // Easter egg.
+  var quack = new Audio("quack.ogg");
+  $("#nav-footer").click(() => {
+    quack.play();
+  });
 });
