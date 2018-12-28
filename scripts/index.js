@@ -9,7 +9,11 @@
 
   // ---- Functions ----
 
-  function refreshState() {
+  function refreshContent() {
+    // Clear the content div to stop any pending network requests.
+    $("#content").empty();
+
+    // Determine what to put inside the div.
     switch (window.location.hash) {
       case "#design":
         openDesignPage();
@@ -31,6 +35,7 @@
         break;
       default:
         // If the hash is empty or unrecognized, go ahead and open the Design page.
+        window.location.hash = "design";
         openDesignPage();
     }
   }
@@ -87,27 +92,22 @@
   }
 
   function openDesignPage() {
-    window.location.hash = "design";
     loadExhibit($("#content"), "design", /* size= */ 19);
   }
 
   function openAnimationPage() {
-    window.location.hash = "animation";
     loadVimeoExhibit($("#content"), "animation", ANIMATION_VIMEO_VIDEO_IDS);
   }
 
   function openIllustrationPage() {
-    window.location.hash = "illustration";
     loadExhibit($("#content"), "illustration", /* size= */ 11);
   }
 
   function openArtPage() {
-    window.location.hash = "art";
     loadExhibit($("#content"), "art", /* size= */ 7);
   }
 
   function openProjectsPage() {
-    window.location.hash = "projects";
     $("#content").load("projects.html", () => {
       loadExhibit($("#zeehaus-artifacts"), "zeehaus", /* size= */ 4, /* itemsPerFor= */ 4);
       loadExhibit($("#thesis-preproduction-artifacts"), "thesis-preproduction", /* size= */ 3);
@@ -117,42 +117,43 @@
   }
 
   function openAboutPage() {
-    window.location.hash = "about";
     $("#content").load("about.html");
   }
 
   // ---- Start of script ----
 
-  // Pre-fetch pages stored in other HTML files so that it's in the cache.
-  $.get("about.html");
-  $.get("projects.html");
-
   // Listen for browser navgation changes.
   window.addEventListener('popstate', event => {
-    refreshState();
+    refreshContent();
   });
 
   // Route to the correct page, or initialize the default page if nothing was specified.
-  refreshState();
+  refreshContent();
 
   // Define click handlers.
   $("#design").click(() => {
-    openDesignPage();
+    window.location.hash = "design";
+    refreshContent();
   });
   $("#animation").click(() => {
-    openAnimationPage();
+    window.location.hash = "animation";
+    refreshContent();
   });
   $("#illustration").click(() => {
-    openIllustrationPage();
+    window.location.hash = "illustration";
+    refreshContent();
   });
   $("#art").click(() => {
-    openArtPage();
+    window.location.hash = "art";
+    refreshContent();
   });
   $("#projects").click(() => {
-    openProjectsPage();
+    window.location.hash = "projects";
+    refreshContent();
   });
   $("#about").click(() => {
-    openAboutPage();
+    window.location.hash = "about";
+    refreshContent();
   });
   $("#resume").click(() => {
     window.open("https://docs.google.com/document/d/1VhogclEd0APy2J8nsYhuJUyV3vaSyDmMQxuzpjSjuYo/edit?usp=sharing");
