@@ -48,7 +48,7 @@ $(document).ready(() => {
     // Add all the exhibit items.
     for (var i = 0; i < size; i++) {
       (i => {
-        var imageId = "-" + i;
+        var imageId = "exhibit-item-" + folder + "-" + i;
         var imagePath = folder + "/" + i + ".png";
 
         // Add the image.
