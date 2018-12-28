@@ -42,7 +42,7 @@ html {
   display: flex;
   flex: 0 1 auto;
   flex-direction: column;
-  padding: 2.8vmin;
+  padding: 3.6vmin;
 }
 .nav-footer {
   font-size: 1.6vmin;
@@ -71,7 +71,7 @@ html {
   opacity: 0.5;
 }
 .title {
-  width: 13.6vmin;
+  width: 20vmin;
 }
 
 /* Exhibit pages. */
@@ -80,6 +80,7 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 4vmin;
 }
 .exhibit-image:hover {
   opacity: 0.5;
@@ -87,7 +88,8 @@ html {
 .exhibit-item {
   background-color: #ffffff;
   flex: 0 1 auto;
-  padding: 1.6%;
+  padding-bottom: 0.8%;
+  padding-right: 1.2%;
 }
 
 /* About page. */
@@ -96,19 +98,20 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 4vmin;
 }
 .about-description {
   flex: 0 1 auto;
-  padding: 1.6%;
   width: 64vmin;
 }
 .about-picture {
   flex: 0 1 auto;
-  padding: 1.6%;
+  margin-bottom: 4vmin;
+  margin-right: 4vmin;
   width: 36vmin;
 }
 
 /* Projects page. */
 .projects {
-  padding: 1.6%;
+  padding: 4vmin;
 }
