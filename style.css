@@ -95,15 +95,15 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 1.6%;
 }
 .about-description {
   flex: 0 1 auto;
-  padding: 3.2vmin;
+  padding: 1.6%;
   width: 64vmin;
 }
 .about-picture {
   flex: 0 1 auto;
+  padding: 1.6%;
   width: 36vmin;
 }
 
