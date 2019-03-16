@@ -18,17 +18,14 @@
 
     // Determine what to put inside the div.
     switch (window.location.hash) {
-      case "#design":
-        openDesignPage();
+      case "#graphic-design":
+        openGraphicDesignPage();
         break;
       case "#animation":
         openAnimationPage();
         break;
       case "#illustration":
         openIllustrationPage();
-        break;
-      case "#art":
-        openArtPage();
         break;
       case "#projects":
         openProjectsPage();
@@ -37,9 +34,9 @@
         openAboutPage();
         break;
       default:
-        // If the hash is empty or unrecognized, go ahead and open the Design page.
-        window.location.hash = "design";
-        openDesignPage();
+        // If the hash is empty or unrecognized, go ahead and open the Graphic Design page.
+        window.location.hash = "graphic-design";
+        openGraphicDesignPage();
     }
   }
 
@@ -94,8 +91,12 @@
     $("." + exhibitItemClass).width(calculateExhibitItemWidthPercentage(itemsPerRow) + "%");
   }
 
-  function openDesignPage() {
-    loadExhibit($("#content"), "design", /* size= */ 19);
+  function openGraphicDesignPage() {
+    $("#content").load("graphic-design.html", () => {
+      loadExhibit($("#pigs-when-seams-fly-artifacts"), "pigs-when-seams-fly", /* size= */ 4, /* itemsPerRow= */ 4);
+      loadExhibit($("#yoon-vintage-artifacts"), "yoon-vintage", /* size= */ 4, /* itemsPerRow= */ 4);
+      loadExhibit($("#miscellaneous-artifacts"), "miscellaneous", /* size= */ 3);
+    });
   }
 
   function openAnimationPage() {
@@ -103,16 +104,12 @@
   }
 
   function openIllustrationPage() {
-    loadExhibit($("#content"), "illustration", /* size= */ 11);
-  }
-
-  function openArtPage() {
-    loadExhibit($("#content"), "art", /* size= */ 7);
+    loadExhibit($("#content"), "illustration", /* size= */ 7);
   }
 
   function openProjectsPage() {
     $("#content").load("projects.html", () => {
-      loadExhibit($("#zeehaus-artifacts"), "zeehaus", /* size= */ 4, /* itemsPerFor= */ 4);
+      loadExhibit($("#zeehaus-artifacts"), "zeehaus", /* size= */ 2);
       loadExhibit($("#thesis-preproduction-artifacts"), "thesis-preproduction", /* size= */ 3);
       loadExhibit($("#thesis-final-design-artifacts"), "thesis-final-design", /* size= */ 2);
       loadVimeoExhibit($("#thesis-final-film"), "thesis-final-film", THESIS_VIMEO_VIDEO_IDS);
@@ -134,8 +131,8 @@
   refreshContent();
 
   // Define click handlers.
-  $("#design").click(() => {
-    window.location.hash = "design";
+  $("#graphic-design").click(() => {
+    window.location.hash = "graphic-design";
     refreshContent();
   });
   $("#animation").click(() => {
@@ -144,10 +141,6 @@
   });
   $("#illustration").click(() => {
     window.location.hash = "illustration";
-    refreshContent();
-  });
-  $("#art").click(() => {
-    window.location.hash = "art";
     refreshContent();
   });
   $("#projects").click(() => {

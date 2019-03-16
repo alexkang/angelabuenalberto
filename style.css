@@ -82,6 +82,9 @@ html {
   flex-wrap: wrap;
   padding: 4vmin;
 }
+.exhibit-container {
+  padding: 4vmin;
+}
 .exhibit-image:hover {
   opacity: 0.5;
 }
@@ -109,9 +112,4 @@ html {
   margin-bottom: 4vmin;
   margin-right: 4vmin;
   width: 36vmin;
-}
-
-/* Projects page. */
-.projects {
-  padding: 4vmin;
 }
