@@ -3,7 +3,7 @@
 
   var EXHIBIT_ITEM_PADDING_PERCENTAGE = 1.2;
   var VIMEO_EMBED_PREFIX = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/"
-  var VIMEO_EMBED_SUFFIX = "' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>"
+  var VIMEO_EMBED_SUFFIX = "?playsinline=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>"
   var ANIMATION_VIMEO_VIDEO_IDS = ["273060713", "283148908", "227518868", "217353881"];
   var THESIS_VIMEO_VIDEO_IDS = ["273060713"];
 
@@ -105,7 +105,7 @@
 
   function openAnimationPage() {
     $("#content").load("animation.html", () => {
-      loadVimeoExhibit($("#animation-content"), "animation", ANIMATION_VIMEO_VIDEO_IDS);
+      loadVimeoExhibit($("#animation-content"), "animation", ANIMATION_VIMEO_VIDEO_IDS, /* itemsPerRow= */ 2);
     });
   }
 
