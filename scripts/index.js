@@ -93,18 +93,26 @@
 
   function openGraphicDesignPage() {
     $("#content").load("graphic-design.html", () => {
+      loadExhibit($("#zeehaus-process-1-artifacts"), "zeehaus-process-1", /* size= */ 1);
+      loadExhibit($("#zeehaus-process-2-artifacts"), "zeehaus-process-2", /* size= */ 1);
+      loadExhibit($("#zeehaus-process-3-artifacts"), "zeehaus-process-3", /* size= */ 1);
+      loadExhibit($("#zeehaus-final-artifacts"), "zeehaus-final", /* size= */ 3);
       loadExhibit($("#pigs-when-seams-fly-artifacts"), "pigs-when-seams-fly", /* size= */ 4, /* itemsPerRow= */ 4);
       loadExhibit($("#yoon-vintage-artifacts"), "yoon-vintage", /* size= */ 4, /* itemsPerRow= */ 4);
-      loadExhibit($("#miscellaneous-artifacts"), "miscellaneous", /* size= */ 3);
+      loadExhibit($("#miscellaneous-artifacts"), "miscellaneous", /* size= */ 1);
     });
   }
 
   function openAnimationPage() {
-    loadVimeoExhibit($("#content"), "animation", ANIMATION_VIMEO_VIDEO_IDS);
+    $("#content").load("animation.html", () => {
+      loadVimeoExhibit($("#animation-content"), "animation", ANIMATION_VIMEO_VIDEO_IDS);
+    });
   }
 
   function openIllustrationPage() {
-    loadExhibit($("#content"), "illustration", /* size= */ 7);
+    $("#content").load("illustration.html", () => {
+      loadExhibit($("#illustration-content"), "illustration", /* size= */ 7);
+    });
   }
 
   function openProjectsPage() {
