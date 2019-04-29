@@ -1,7 +1,9 @@
 (() => {
   // ---- Constants ----
 
-  var EXHIBIT_ITEM_PADDING_PERCENTAGE = 1.2;
+  var DESKTOP_FONT_SIZE_VMIN = "2.4vmin";
+  var MOBILE_FONT_SIZE_VMIN = "4.0vmin";
+  var NAV_ANIMATION_DURATION_MS = 240;
   var VIMEO_EMBED_PREFIX = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/"
   var VIMEO_EMBED_SUFFIX = "?playsinline=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>"
   var ANIMATION_VIMEO_VIDEO_IDS = ["273060713", "283148908", "227518868", "217353881"];
@@ -9,7 +11,56 @@
 
   // ---- Functions ----
 
+  function isMobile() {
+    return $(window).width() < $(window).height();
+  }
+
+  function showNavMenu() {
+    $(".nav").show(NAV_ANIMATION_DURATION_MS);
+    $(".content-overlay").fadeIn(NAV_ANIMATION_DURATION_MS);
+  }
+
+  function hideNavMenu() {
+    $(".content-overlay").fadeOut(NAV_ANIMATION_DURATION_MS);
+    $(".nav").hide(NAV_ANIMATION_DURATION_MS);
+  }
+
+  function toggleNavMenu() {
+    if ($(".nav").is(":hidden")) {
+      showNavMenu();
+    } else {
+      hideNavMenu();
+    }
+  }
+
+  function updateNavigationMode() {
+    if (isMobile()) {
+      var mobileHeaderPadding = $(".nav-mobile-header").outerHeight();
+
+      $("html").css("font-size", MOBILE_FONT_SIZE_VMIN);
+      $(".content-nav-mobile-header-padder").height(mobileHeaderPadding);
+      $(".content-nav-padder").width(0);
+      $(".nav-desktop-optionals").hide();
+      $(".nav").hide();
+      $(".nav-mobile-header-padder").height(mobileHeaderPadding);
+      $(".nav-mobile-header").show();
+    } else {
+      $("html").css("font-size", DESKTOP_FONT_SIZE_VMIN);
+      $(".content-nav-mobile-header-padder").height(0);
+      $(".content-nav-padder").width($(".nav").outerWidth());
+      $(".nav-desktop-optionals").show();
+      $(".nav").show();
+      $(".nav-mobile-header-padder").height(0);
+      $(".nav-mobile-header").hide();
+    }
+    $(".content-overlay").hide();
+  }
+
   function refreshContent() {
+    if (isMobile()) {
+      hideNavMenu();
+    }
+
     // Stop loading any pending images.
     $("#content").find("img").attr("src", "");
 
@@ -40,8 +91,8 @@
     }
   }
 
-  function calculateExhibitItemWidthPercentage(itemsPerRow) {
-    return (100 - (EXHIBIT_ITEM_PADDING_PERCENTAGE * itemsPerRow)) / itemsPerRow;
+  function resizeExhibitItems(containerId, itemClass, itemsPerRow) {
+    $("." + itemClass).outerWidth($("#" + containerId).width() / itemsPerRow);
   }
 
   function loadExhibit(containingElement, folder, size, itemsPerRow = 3) {
@@ -70,7 +121,10 @@
     }
 
     // Adjust the width of each item.
-    $("." + exhibitItemClass).width(calculateExhibitItemWidthPercentage(itemsPerRow) + "%");
+    resizeExhibitItems(exhibitId, exhibitItemClass, itemsPerRow);
+    $(window).resize(() => {
+      resizeExhibitItems(exhibitId, exhibitItemClass, itemsPerRow);
+    });
   }
 
   function loadVimeoExhibit(containingElement, exhibitName, videoIds, itemsPerRow = 3) {
@@ -88,7 +142,10 @@
     });
 
     // Adjust the width of each item.
-    $("." + exhibitItemClass).width(calculateExhibitItemWidthPercentage(itemsPerRow) + "%");
+    resizeExhibitItems(exhibitId, exhibitItemClass, itemsPerRow);
+    $(window).resize(() => {
+      resizeExhibitItems(exhibitId, exhibitItemClass, itemsPerRow);
+    });
   }
 
   function openGraphicDesignPage() {
@@ -130,6 +187,12 @@
 
   // ---- Start of script ----
 
+  // Listen for window resizes.
+  $(window).resize(() => {
+    updateNavigationMode();
+  });
+  updateNavigationMode();
+
   // Listen for browser navgation changes.
   window.addEventListener('popstate', event => {
     refreshContent();
@@ -139,6 +202,14 @@
   refreshContent();
 
   // Define click handlers.
+  $(".nav-mobile-menu-button").click(() => {
+    toggleNavMenu();
+  });
+
+  $(".content-overlay").click(() => {
+    hideNavMenu();
+  });
+
   $("#graphic-design").click(() => {
     window.location.hash = "graphic-design";
     refreshContent();

@@ -25,28 +25,41 @@
   </head>
   <body>
     <!-- Navigation -->
+    <div class="nav-mobile-header">
+      <img class="image-button nav-mobile-menu-button" src="images/menu.svg" />
+      <img class="nav-mobile-title" src="images/title.png" />
+    </div>
     <div class="nav">
-      <img class="title" src="images/title.png" />
+      <div class="nav-mobile-header-padder"></div>
+      <div class="nav-desktop-optionals">
+        <img class="title" src="images/title.png" />
+        <hr>
+      </div>
+      <div class="nav-item text-button" id="graphic-design">Graphic Design</div>
+      <div class="nav-item text-button" id="animation">Animation</div>
+      <div class="nav-item text-button" id="illustration">Illustration</div>
+      <div class="nav-item text-button" id="projects">Projects</div>
       <hr>
-      <div class="nav-item" id="graphic-design">Graphic Design</div>
-      <div class="nav-item" id="animation">Animation</div>
-      <div class="nav-item" id="illustration">Illustration</div>
-      <div class="nav-item" id="projects">Projects</div>
-      <hr>
-      <div class="nav-item" id="about">About</div>
-      <div class="nav-item" id="resume">Résumé</div>
+      <div class="nav-item text-button" id="about">About</div>
+      <div class="nav-item text-button" id="resume">Résumé</div>
       <hr>
       <div class="social-media">
-        <a href="https://www.instagram.com/angela.b.alberto" target="_blank"><img class="social-media-item" src="images/instagram.png" /></a>
-        <a href="https://twitter.com/angelabalberto" target="_blank"><img class="social-media-item" src="images/twitter.png" /></a>
-        <a href="mailto:angelabuenalberto@gmail.com" target="_blank"><img class="social-media-item" src="images/email.png" /></a>
+        <a href="https://www.instagram.com/angela.b.alberto" target="_blank"><img class="image-button social-media-item" src="images/instagram.png" /></a>
+        <a href="https://twitter.com/angelabalberto" target="_blank"><img class="image-button social-media-item" src="images/twitter.png" /></a>
+        <a href="mailto:angelabuenalberto@gmail.com" target="_blank"><img class="image-button social-media-item" src="images/email.png" /></a>
       </div>
       <div class="nav-spacer"></div>
       <div class="nav-footer" id="nav-footer"><a href="http://alex.supply" target="_blank">(•ө•)♡</a></div>
     </div>
 
     <!-- Content -->
-    <div class="content" id="content"></div>
+    <div class="content-overlay"></div>
+    <div class="content-nav-mobile-header-padder"></div>
+    <div class="content-nav-padder"></div>
+    <div class="content-container">
+      <div class="content" id="content"></div>
+      <div class="content-tint"></div>
+    </div>
 
     <!-- Scripts -->
     <script src="scripts/jquery-3.3.1.min.js"></script>

@@ -8,8 +8,6 @@ a:hover {
   color: #ff7c56;
 }
 body {
-  display: flex;
-  flex-direction: row;
   height: 100%;
   margin: 0vmin;
   padding: 0vmin;
@@ -36,27 +34,65 @@ html {
 .content {
   flex: 1 1 auto;
   overflow: scroll;
-  padding-bottom: 4vmin;
-  padding-left: 4vmin;
-  padding-right: 12vmin;
-  padding-top: 6vmin;
+  padding: 4vmin;
+}
+.nav-mobile-header-padder {
+  float: top;
+  width: 100%;
+}
+.content-nav-padder {
+  float: left;
+  height: 100%;
+}
+.content-overlay {
+  background-color: #191919;
+  display: none;
+  height: 100%;
+  opacity: 0.7;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.image-button:hover {
+  opacity: 0.5;
 }
 .nav {
+  background-color: #fefefe;
   display: flex;
   flex: 0 1 auto;
   flex-direction: column;
+  height: 100%;
   padding: 3.6vmin;
+  position: fixed;
+  z-index: 2;
 }
 .nav-footer {
   font-size: 1.6vmin;
 }
 .nav-item {
-  font-size: 2.4vmin;
   font-weight: bold;
   white-space: nowrap;
 }
-.nav-item:hover {
-  color: #ff7c56;
+.nav-mobile-header {
+  align-items: center;
+  background-color: #fefefe;
+  display: flex;
+  flex-direction: row;
+  height: 16vmin;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+.nav-mobile-header-padder {
+  float: top;
+  width: 100%;
+}
+.nav-mobile-menu-button {
+  height: 8vmin;
+  padding: 4vmin;
+}
+.nav-mobile-title {
+  height: 12vmin;
 }
 .nav-spacer {
   flex: 1 1 auto;
@@ -70,8 +106,8 @@ html {
   margin: 0.8vmin;
   width: 2.8vmin;
 }
-.social-media-item:hover {
-  opacity: 0.5;
+.text-button:hover {
+  color: #ff7c56;
 }
 .title {
   width: 20vmin;
@@ -83,7 +119,6 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 4vmin;
 }
 .exhibit-image:hover {
   opacity: 0.5;
@@ -91,8 +126,8 @@ html {
 .exhibit-item {
   background-color: #ffffff;
   flex: 0 1 auto;
-  padding-bottom: 0.8%;
-  padding-right: 1.2%;
+  padding-bottom: 4vmin;
+  padding-right: 4vmin;
 }
 
 /* About page. */
@@ -101,7 +136,6 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 4vmin;
 }
 .about-description {
   flex: 0 1 auto;
