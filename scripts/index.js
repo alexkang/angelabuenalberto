@@ -35,6 +35,9 @@
   }
 
   function updateNavigationMode() {
+    $(".content-overlay").hide();
+    $(".nav").outerHeight("100%");
+
     if (isMobile()) {
       var mobileHeaderPadding = $(".nav-mobile-header").outerHeight();
 
@@ -52,11 +55,11 @@
       $(".content-nav-mobile-header-padder").height(0);
       $(".content-nav-padder").width($(".nav").outerWidth());
       $(".nav").show();
+      $(".nav").outerHeight("100%");
       $(".nav-desktop-optionals").show();
       $(".nav-mobile-header-padder").height(0);
       $(".nav-mobile-header").hide();
     }
-    $(".content-overlay").hide();
   }
 
   function refreshContent() {
