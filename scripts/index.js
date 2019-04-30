@@ -3,6 +3,7 @@
 
   var DESKTOP_FONT_SIZE_VMIN = "2.4vmin";
   var MOBILE_FONT_SIZE_VMIN = "4.0vmin";
+  var DESKTOP_CONTENT_PADDING_RIGHT = "16vmin";
   var NAV_ANIMATION_DURATION_MS = 240;
   var VIMEO_EMBED_PREFIX = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/"
   var VIMEO_EMBED_SUFFIX = "?playsinline=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>"
@@ -38,18 +39,20 @@
       var mobileHeaderPadding = $(".nav-mobile-header").outerHeight();
 
       $("html").css("font-size", MOBILE_FONT_SIZE_VMIN);
+      $(".content").css("padding-right", "");
       $(".content-nav-mobile-header-padder").height(mobileHeaderPadding);
       $(".content-nav-padder").width(0);
-      $(".nav-desktop-optionals").hide();
       $(".nav").hide();
+      $(".nav-desktop-optionals").hide();
       $(".nav-mobile-header-padder").height(mobileHeaderPadding);
       $(".nav-mobile-header").show();
     } else {
       $("html").css("font-size", DESKTOP_FONT_SIZE_VMIN);
+      $(".content").css("padding-right", DESKTOP_CONTENT_PADDING_RIGHT);
       $(".content-nav-mobile-header-padder").height(0);
       $(".content-nav-padder").width($(".nav").outerWidth());
-      $(".nav-desktop-optionals").show();
       $(".nav").show();
+      $(".nav-desktop-optionals").show();
       $(".nav-mobile-header-padder").height(0);
       $(".nav-mobile-header").hide();
     }
@@ -150,10 +153,9 @@
 
   function openGraphicDesignPage() {
     $("#content").load("graphic-design.html", () => {
-      loadExhibit($("#zeehaus-process-1-artifacts"), "zeehaus-process-1", /* size= */ 1);
-      loadExhibit($("#zeehaus-process-2-artifacts"), "zeehaus-process-2", /* size= */ 1);
-      loadExhibit($("#zeehaus-process-3-artifacts"), "zeehaus-process-3", /* size= */ 1);
-      loadExhibit($("#zeehaus-final-artifacts"), "zeehaus-final", /* size= */ 3);
+      loadExhibit($("#zeehaus-logo-artifacts"), "zeehaus-logo", /* size= */ 1);
+      loadExhibit($("#zeehaus-iconography-artifacts"), "zeehaus-iconography", /* size= */ 5);
+      loadExhibit($("#zeehaus-website-artifacts"), "zeehaus-website", /* size= */ 5);
       loadExhibit($("#pigs-when-seams-fly-artifacts"), "pigs-when-seams-fly", /* size= */ 4, /* itemsPerRow= */ 4);
       loadExhibit($("#yoon-vintage-artifacts"), "yoon-vintage", /* size= */ 4, /* itemsPerRow= */ 4);
       loadExhibit($("#miscellaneous-artifacts"), "miscellaneous", /* size= */ 1);
@@ -174,7 +176,6 @@
 
   function openProjectsPage() {
     $("#content").load("projects.html", () => {
-      loadExhibit($("#zeehaus-artifacts"), "zeehaus", /* size= */ 2);
       loadExhibit($("#thesis-preproduction-artifacts"), "thesis-preproduction", /* size= */ 3);
       loadExhibit($("#thesis-final-design-artifacts"), "thesis-final-design", /* size= */ 2);
       loadVimeoExhibit($("#thesis-final-film"), "thesis-final-film", THESIS_VIMEO_VIDEO_IDS);

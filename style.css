@@ -119,6 +119,7 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding-top: 4vmin;
 }
 .exhibit-image:hover {
   opacity: 0.5;
