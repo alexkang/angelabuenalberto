@@ -1,6 +1,7 @@
 (() => {
   // ---- Constants ----
 
+  var MAX_SCROLLBAR_WIDTH = "20";
   var DESKTOP_FONT_SIZE_VMIN = "2.4vmin";
   var MOBILE_FONT_SIZE_VMIN = "4.0vmin";
   var DESKTOP_CONTENT_PADDING_RIGHT = "16vmin";
@@ -98,7 +99,7 @@
   }
 
   function resizeExhibitItems(containerId, itemClass, itemsPerRow) {
-    $("." + itemClass).outerWidth($("#" + containerId).width() / itemsPerRow);
+    $("." + itemClass).outerWidth(($("#" + containerId).width() - MAX_SCROLLBAR_WIDTH) / itemsPerRow);
   }
 
   function loadExhibit(containingElement, folder, size, itemsPerRow = 3) {
