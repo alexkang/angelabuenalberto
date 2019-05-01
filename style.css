@@ -101,6 +101,7 @@ hr {
   height: 100%;
 }
 .content {
+  height: 100%;
   overflow: scroll;
   padding: 4vmin;
 }
@@ -120,7 +121,6 @@ hr {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: 4vmin;
 }
 .exhibit-item {
   background-color: #ffffff;
