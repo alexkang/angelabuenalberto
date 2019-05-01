@@ -101,8 +101,6 @@ hr {
   height: 100%;
 }
 .content {
-  height: 100%;
-  overflow: scroll;
   padding: 4vmin;
 }
 .content-overlay {
