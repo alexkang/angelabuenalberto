@@ -174,7 +174,7 @@
 
   function openIllustrationPage() {
     $("#content").load("illustration.html", () => {
-      loadExhibit($("#illustration-content"), "illustration", /* size= */ 7);
+      loadExhibit($("#illustration-content"), "illustration", /* size= */ 6);
     });
   }
 
