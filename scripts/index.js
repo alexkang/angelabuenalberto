@@ -195,7 +195,7 @@
   }
 
   function openZeehausPage() {
-    $("#content").load("zeehaus/zeehaus.html", () => {
+    $("#content").load("zeehaus/index.html", () => {
       loadExhibit("logo", $("#logo"), "zeehaus/artifacts/logo", /* size= */ 1);
       loadExhibit("iconography", $("#iconography"), "zeehaus/artifacts/iconography", /* size= */ 4);
       loadExhibit("website", $("#website"), "zeehaus/artifacts/website", /* size= */ 4);
