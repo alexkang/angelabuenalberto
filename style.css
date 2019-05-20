@@ -79,10 +79,6 @@ hr {
   width: inherit;
   z-index: 1
 }
-.preview-button-thumbnail:hover {
-  opacity: 0.5;
-  transition: 300ms;
-}
 .social-media {
   align-items: center;
   display: flex;
