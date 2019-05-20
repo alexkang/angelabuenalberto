@@ -33,6 +33,56 @@ hr {
 .image-button:hover {
   opacity: 0.5;
 }
+.preview-button-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.preview-button-container {
+  height: 28vmin;
+  margin-bottom: 4vmin;
+  margin-right: 4vmin;
+  width: 28vmin;
+}
+.preview-button-cover {
+  height: inherit;
+  object-fit: contain;
+  position: absolute;
+  width: inherit;
+  z-index: 3;
+}
+.preview-button-cover:hover {
+  opacity: 0;
+  transition: 300ms;
+}
+.preview-button {
+  height: inherit;
+  width: inherit;
+}
+.preview-button-title {
+  display: flex;
+  flex-direction: column;
+  height: 24vmin;
+  justify-content: center;
+  margin: 0;
+  padding: 2vmin;
+  position: absolute;
+  text-align: center;
+  width: 24vmin;
+  z-index: 2;
+}
+.preview-button-thumbnail {
+  height: inherit;
+  object-fit: contain;
+  opacity: 0.3;
+  position: absolute;
+  width: inherit;
+  z-index: 1
+}
+.preview-button-thumbnail:hover {
+  opacity: 0.5;
+  transition: 300ms;
+}
 .social-media {
   align-items: center;
   display: flex;

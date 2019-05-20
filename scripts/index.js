@@ -4,12 +4,11 @@
   var MAX_SCROLLBAR_WIDTH = "20";
   var DESKTOP_FONT_SIZE_VMIN = "2.4vmin";
   var MOBILE_FONT_SIZE_VMIN = "4.0vmin";
-  var DESKTOP_CONTENT_PADDING_RIGHT = "16vmin";
+  var DESKTOP_CONTENT_PADDING_HORIZONTAL = "6vw";
   var NAV_ANIMATION_DURATION_MS = 240;
   var VIMEO_EMBED_PREFIX = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/"
   var VIMEO_EMBED_SUFFIX = "?playsinline=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>"
   var ANIMATION_VIMEO_VIDEO_IDS = ["273060713", "283148908", "227518868", "217353881"];
-  var THESIS_VIMEO_VIDEO_IDS = ["273060713"];
 
   // ---- Functions ----
 
@@ -52,7 +51,8 @@
       $(".nav-mobile-header").show();
     } else {
       $("html").css("font-size", DESKTOP_FONT_SIZE_VMIN);
-      $(".content").css("padding-right", DESKTOP_CONTENT_PADDING_RIGHT);
+      $(".content").css("padding-left", DESKTOP_CONTENT_PADDING_HORIZONTAL);
+      $(".content").css("padding-right", DESKTOP_CONTENT_PADDING_HORIZONTAL);
       $(".content-nav-mobile-header-padder").height(0);
       $(".content-nav-padder").width($(".nav").outerWidth());
       $(".nav").show();
@@ -85,15 +85,21 @@
       case "#illustration":
         openIllustrationPage();
         break;
-      case "#projects":
-        openProjectsPage();
-        break;
       case "#about":
         openAboutPage();
         break;
+      case "#zeehaus":
+        openZeehausPage();
+        break;
+      case "#seams-when-pigs-fly":
+        openSeamsWhenPigsFlyPage();
+        break;
+      case "#yoon-vintage":
+        openYoonVintagePage();
+        break;
       default:
         // If the hash is empty or unrecognized, go ahead and open the Graphic Design page.
-        window.location.hash = "graphic-design";
+        window.location.hash = "#graphic-design";
         openGraphicDesignPage();
     }
   }
@@ -102,16 +108,16 @@
     $("." + itemClass).outerWidth(($("#" + containerId).width() - MAX_SCROLLBAR_WIDTH) / itemsPerRow);
   }
 
-  function loadExhibit(containingElement, folder, size, itemsPerRow = 3) {
+  function loadExhibit(name, containingElement, folder, size, itemsPerRow = 3) {
     // Add the exhibit.
-    var exhibitId = "exhibit-" + folder;
-    var exhibitItemClass = "exhibit-item-" + folder;
+    var exhibitId = "exhibit-" + name;
+    var exhibitItemClass = "exhibit-item-" + name;
     containingElement.html("<div class='exhibit' id='" + exhibitId + "'></div>");
 
     // Add all the exhibit items.
     for (var i = 0; i < size; i++) {
       (i => {
-        var imageId = "exhibit-item-" + folder + "-" + i;
+        var imageId = "exhibit-item-" + name + "-" + i;
         var imagePath = folder + "/" + i + ".png";
 
         // Add the image.
@@ -134,7 +140,7 @@
     });
   }
 
-  function loadVimeoExhibit(containingElement, exhibitName, videoIds, itemsPerRow = 3) {
+  function loadVimeoExhibit(exhibitName, containingElement, videoIds, itemsPerRow = 3) {
     // Add the exhibit.
     var exhibitId = "exhibit-" + exhibitName;
     var exhibitItemClass = "exhibit-item-" + exhibitName;
@@ -157,37 +163,55 @@
 
   function openGraphicDesignPage() {
     $("#content").load("graphic-design.html", () => {
-      loadExhibit($("#zeehaus-logo-artifacts"), "zeehaus-logo", /* size= */ 1);
-      loadExhibit($("#zeehaus-iconography-artifacts"), "zeehaus-iconography", /* size= */ 5);
-      loadExhibit($("#zeehaus-website-artifacts"), "zeehaus-website", /* size= */ 5);
-      loadExhibit($("#pigs-when-seams-fly-artifacts"), "pigs-when-seams-fly", /* size= */ 4, /* itemsPerRow= */ 4);
-      loadExhibit($("#yoon-vintage-artifacts"), "yoon-vintage", /* size= */ 4, /* itemsPerRow= */ 4);
-      loadExhibit($("#miscellaneous-artifacts"), "miscellaneous", /* size= */ 1);
+      $("#zeehaus").click(() => {
+        window.location.hash = "#zeehaus";
+        refreshContent();
+      });
+      $("#seams-when-pigs-fly").click(() => {
+        window.location.hash = "#seams-when-pigs-fly";
+        refreshContent();
+      });
+      $("#yoon-vintage").click(() => {
+        window.location.hash = "#yoon-vintage";
+        refreshContent();
+      });
     });
   }
 
   function openAnimationPage() {
     $("#content").load("animation.html", () => {
-      loadVimeoExhibit($("#animation-content"), "animation", ANIMATION_VIMEO_VIDEO_IDS, /* itemsPerRow= */ 2);
+      loadVimeoExhibit("animation", $("#animation-content"), ANIMATION_VIMEO_VIDEO_IDS, /* itemsPerRow= */ 2);
     });
   }
 
   function openIllustrationPage() {
     $("#content").load("illustration.html", () => {
-      loadExhibit($("#illustration-content"), "illustration", /* size= */ 6);
-    });
-  }
-
-  function openProjectsPage() {
-    $("#content").load("projects.html", () => {
-      loadExhibit($("#thesis-preproduction-artifacts"), "thesis-preproduction", /* size= */ 3);
-      loadExhibit($("#thesis-final-design-artifacts"), "thesis-final-design", /* size= */ 2);
-      loadVimeoExhibit($("#thesis-final-film"), "thesis-final-film", THESIS_VIMEO_VIDEO_IDS);
+      loadExhibit("illustration", $("#illustration-content"), "illustration", /* size= */ 6);
     });
   }
 
   function openAboutPage() {
     $("#content").load("about.html");
+  }
+
+  function openZeehausPage() {
+    $("#content").load("zeehaus/zeehaus.html", () => {
+      loadExhibit("logo", $("#logo"), "zeehaus/artifacts/logo", /* size= */ 1);
+      loadExhibit("iconography", $("#iconography"), "zeehaus/artifacts/iconography", /* size= */ 4);
+      loadExhibit("website", $("#website"), "zeehaus/artifacts/website", /* size= */ 4);
+    });
+  }
+
+  function openSeamsWhenPigsFlyPage() {
+    $("#content").load("seams-when-pigs-fly/index.html", () => {
+      loadExhibit("seams-when-pigs-fly", $("#artifacts"), "seams-when-pigs-fly/artifacts", /* size= */ 4, /* itemsPerRow= */ 4);
+    });
+  }
+
+  function openYoonVintagePage() {
+    $("#content").load("yoon-vintage/index.html", () => {
+      loadExhibit("yoon-vintage", $("#artifacts"), "yoon-vintage/artifacts", /* size= */ 4, /* itemsPerRow= */ 4);
+    });
   }
 
   // ---- Start of script ----
@@ -225,10 +249,6 @@
   });
   $("#illustration").click(() => {
     window.location.hash = "illustration";
-    refreshContent();
-  });
-  $("#projects").click(() => {
-    window.location.hash = "projects";
     refreshContent();
   });
   $("#about").click(() => {
