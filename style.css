@@ -39,10 +39,10 @@ hr {
   flex-wrap: wrap;
 }
 .preview-button-container {
-  height: 28vmin;
+  height: 36vmin;
   margin-bottom: 4vmin;
   margin-right: 4vmin;
-  width: 28vmin;
+  width: 36vmin;
 }
 .preview-button-cover {
   height: inherit;
@@ -62,13 +62,13 @@ hr {
 .preview-button-title {
   display: flex;
   flex-direction: column;
-  height: 24vmin;
+  height: 32vmin;
   justify-content: center;
   margin: 0;
   padding: 2vmin;
   position: absolute;
   text-align: center;
-  width: 24vmin;
+  width: 32vmin;
   z-index: 2;
 }
 .preview-button-thumbnail {
@@ -103,7 +103,7 @@ hr {
   flex-direction: column;
   padding: 3.6vmin;
   position: fixed;
-  z-index: 2;
+  z-index: 998;
 }
 .nav-mobile-header-padder {
   float: top;
@@ -128,7 +128,7 @@ hr {
   height: 16vmin;
   position: fixed;
   width: 100%;
-  z-index: 3;
+  z-index: 999;
 }
 .nav-mobile-title {
   height: 12vmin;
@@ -153,7 +153,7 @@ hr {
   opacity: 0.8;
   position: fixed;
   width: 200%;
-  z-index: 1;
+  z-index: 997;
 }
 
 /* Exhibit pages. */
