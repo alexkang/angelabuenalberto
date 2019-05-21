@@ -45,6 +45,7 @@ hr {
   width: 36vmin;
 }
 .preview-button-cover {
+  background-color: #ffffff;
   height: inherit;
   object-fit: contain;
   position: absolute;
