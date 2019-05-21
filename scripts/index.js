@@ -214,7 +214,7 @@
       loadExhibit("logo", $("#logo"), "nor-gal/artifacts/logo", /* size= */ 1);
       loadExhibit("visual-identity", $("#visual-identity"), "nor-gal/artifacts/visual-identity", /* size= */ 3);
       loadExhibit("iconography", $("#iconography"), "nor-gal/artifacts/iconography", /* size= */ 1);
-      loadExhibit("social-media", $("#social-media"), "nor-gal/artifacts/social-media", /* size= */ 4);
+      loadExhibit("social-media", $("#social-media"), "nor-gal/artifacts/social-media", /* size= */ 4, /* itemsPerRow= */ 4);
       loadExhibit("flyers", $("#flyers"), "nor-gal/artifacts/flyers", /* size= */ 2);
       loadExhibit("merchandise", $("#merchandise"), "nor-gal/artifacts/merchandise", /* size= */ 3);
     });
