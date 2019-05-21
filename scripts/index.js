@@ -91,6 +91,9 @@
       case "#zeehaus":
         openZeehausPage();
         break;
+      case "#nor-gal":
+        openNorGalPage();
+        break;
       case "#seams-when-pigs-fly":
         openSeamsWhenPigsFlyPage();
         break;
@@ -167,6 +170,10 @@
         window.location.hash = "#zeehaus";
         refreshContent();
       });
+      $("#nor-gal").click(() => {
+        window.location.hash = "#nor-gal";
+        refreshContent();
+      });
       $("#seams-when-pigs-fly").click(() => {
         window.location.hash = "#seams-when-pigs-fly";
         refreshContent();
@@ -199,6 +206,17 @@
       loadExhibit("logo", $("#logo"), "zeehaus/artifacts/logo", /* size= */ 1);
       loadExhibit("iconography", $("#iconography"), "zeehaus/artifacts/iconography", /* size= */ 4);
       loadExhibit("website", $("#website"), "zeehaus/artifacts/website", /* size= */ 4);
+    });
+  }
+
+  function openNorGalPage() {
+    $("#content").load("nor-gal/index.html", () => {
+      loadExhibit("logo", $("#logo"), "nor-gal/artifacts/logo", /* size= */ 1);
+      loadExhibit("visual-identity", $("#visual-identity"), "nor-gal/artifacts/visual-identity", /* size= */ 3);
+      loadExhibit("iconography", $("#iconography"), "nor-gal/artifacts/iconography", /* size= */ 1);
+      loadExhibit("social-media", $("#social-media"), "nor-gal/artifacts/social-media", /* size= */ 4);
+      loadExhibit("flyers", $("#flyers"), "nor-gal/artifacts/flyers", /* size= */ 2);
+      loadExhibit("merchandise", $("#merchandise"), "nor-gal/artifacts/merchandise", /* size= */ 3);
     });
   }
 
