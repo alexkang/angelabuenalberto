@@ -5,6 +5,7 @@
   var DESKTOP_FONT_SIZE_VMIN = "2.4vmin";
   var MOBILE_FONT_SIZE_VMIN = "4.0vmin";
   var DESKTOP_CONTENT_PADDING_HORIZONTAL = "6vw";
+  var IMAGE_PRESENTER_ANIMATION_DURATION_MS = 100;
   var NAV_ANIMATION_DURATION_MS = 240;
   var VIMEO_EMBED_PREFIX = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/"
   var VIMEO_EMBED_SUFFIX = "?playsinline=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>"
@@ -107,6 +108,16 @@
     }
   }
 
+  function presentImage(path) {
+    $(".image-presenter-subject").attr("src", path);
+    $(".image-presenter").show(IMAGE_PRESENTER_ANIMATION_DURATION_MS);
+  }
+
+  function unpresentImage() {
+    $(".image-presenter").hide(IMAGE_PRESENTER_ANIMATION_DURATION_MS);
+    $(".image-presenter-subject").removeAttr("src");
+  }
+
   function resizeExhibitItems(containerId, itemClass, itemsPerRow) {
     $("." + itemClass).outerWidth(($("#" + containerId).width() - MAX_SCROLLBAR_WIDTH) / itemsPerRow);
   }
@@ -122,16 +133,17 @@
       (i => {
         var imageId = "exhibit-item-" + name + "-" + i;
         var imagePath = folder + "/" + i + ".png";
+        var thumbnailImagePath = folder + "/thumbnails/" + i + ".png";
 
         // Add the image.
         $("#" + exhibitId).append(
           "<img class='exhibit-item " + exhibitItemClass + " exhibit-image' " + 
           "id='" + imageId + "' " + 
-          "src='" + imagePath + "' />");
+          "src='" + thumbnailImagePath + "' />");
 
         // Allow the image to be opened up in a new tab after clicking it.
         $("#" + imageId).click(() => {
-          window.open(imagePath, "_blank");
+          presentImage(imagePath);
         });
       })(i);
     }
@@ -249,6 +261,10 @@
   refreshContent();
 
   // Define click handlers.
+  $(".image-presenter-background").click(() => {
+    unpresentImage();
+  });
+
   $(".nav-mobile-menu-button").click(() => {
     toggleNavMenu();
   });
